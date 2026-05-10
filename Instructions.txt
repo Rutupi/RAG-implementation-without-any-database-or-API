@@ -1,0 +1,194 @@
+
+THRIFTY AI – INSTRUCTIONS TO RUN THE PROJECT
+
+1. REQUIREMENTS
+
+Before running the project, ensure the following are installed:
+
+- Python 3.8 or above
+- pip (Python package manager)
+
+
+To check Python installation:
+
+Command:
+python --version
+
+or
+
+python3 --version
+
+2. PROJECT FILES
+
+Ensure the following files are present in the project folder:
+
+thrifty-rag/
+│
+├── docs.json
+├── queries.json
+├── main.py
+├── requirements.txt
+├── README.txt
+└── RUN_INSTRUCTIONS.txt
+
+
+3. CREATE A VIRTUAL ENVIRONMENT 
+
+Step 1: Open terminal or command prompt
+
+Step 2: Navigate to project folder
+
+Command:
+cd path_to_project_folder
+
+
+Step 3: Create virtual environment
+
+Windows:
+python -m venv venv
+
+Mac/Linux:
+python3 -m venv venv
+
+
+Step 4: Activate virtual environment
+
+Windows:
+venv\Scripts\activate
+
+Mac/Linux:
+source venv/bin/activate
+
+
+4. INSTALL REQUIRED DEPENDENCIES
+
+Install all required Python packages using:
+
+Command:
+pip install -r requirements.txt
+
+
+This installs:
+- scikit-learn
+- numpy
+
+
+5. RUN THE PROJECT
+
+Run the RAG system using:
+
+Command:
+python main.py
+
+
+or on some systems:
+
+python3 main.py
+
+
+6. EXPECTED OUTPUT
+
+The terminal will display:
+
+- User query
+- Retrieved context
+- Constructed prompt
+- Generated answer
+- Evaluation score
+
+
+Example Output:
+
+
+QUERY:
+Who launched Chandrayaan-3?
+
+RETRIEVED CONTEXT:
+- India launched Chandrayaan-3 in 2023.
+- The mission successfully landed on the moon's south pole.
+
+GENERATED ANSWER:
+India launched Chandrayaan-3 in 2023.
+
+EVALUATION SCORE:
+0.91
+
+7. MODIFYING INPUT DATA
+
+You can modify:
+
+1. docs.json
+   → Add or remove documents
+
+2. queries.json
+   → Add new user queries
+
+
+After modifying files, rerun:
+
+python main.py
+
+
+8. HOW THE SYSTEM WORKS
+
+The pipeline executes the following stages:
+
+1. Load documents and queries
+2. Preprocess text
+3. Convert documents into TF-IDF vectors
+4. Retrieve top-k relevant documents
+5. Construct prompt
+6. Generate grounded answer
+7. Evaluate answer quality
+
+
+9. TROUBLESHOOTING
+
+Issue:
+ModuleNotFoundError
+
+Solution:
+Install dependencies again using:
+
+pip install -r requirements.txt
+
+
+Issue:
+python command not found
+
+Solution:
+Use:
+
+python3 main.py
+
+
+Issue:
+JSON file not found
+
+Solution:
+Ensure:
+- docs.json
+- queries.json
+
+are in the same folder as main.py
+
+
+10. NOTES
+- The project runs fully offline
+- No internet connection is required
+- No external APIs are used
+- No vector database is required
+- Retrieval is fully in-memory
+- The system is lightweight and beginner-friendly
+
+
+
+11. TERMINATING THE PROGRAM
+
+After execution completes, the program exits automatically.
+
+If running manually in terminal, press:
+
+CTRL + C
+
+to stop execution if required.
